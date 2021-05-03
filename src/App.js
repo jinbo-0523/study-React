@@ -1,14 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import ColorfullMessage from "./components/ColorfullMessage";
 
 // JSX記法で記述
 const App = () => {
-  const onClickButton = () => alert("");
+  const onClickCountUp = () => {
+    setNum(num + 1);
+  };
+
   // ③オブジェクトの変数を定義してプロパティを書きスタイルを当てていく
   // const contentLedyStyle = {
   //   color: "pink",
   //   fontSize: "18px"
   // };
+  // ⑥useStateは関数。
+  // 上のimport Reactに自動で補完され、{ useState }が入力される
+  // [stateとして使用する変数名, 変数を変更するための関数（setOOOとするのが一般的）]
+  const [num, setNum] = useState(0);
   return (
     <>
       {/* ①直接オブジェクトにスタイルを当てていく */}
@@ -24,7 +31,9 @@ const App = () => {
       <ColorfullMessage color="pink">元気です！</ColorfullMessage>
       {/* ⑤prposで渡す方法２種類がある */}
       {/* <ColorfullMessage color="pink" message="元気です！"/> */}
-      <button onClick={onClickButton}>ボタン</button>
+
+      <button onClick={onClickCountUp}>カウントアップ！</button>
+      <p>{num}</p>
     </>
   );
 };
