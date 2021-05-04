@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from "react";
-import ColorfullMessage from "./components/ColorfullMessage";
+
+// import ColorfullMessage from "./components/ColorfullMessage";
+// ⑦export const 〜の個別のexportは以下の分割代入方式で記述
+// メリットは命名をタイポするとエラーを吐いてくれること・個々に宣言をexportできること
+import { ColorfullMessage } from "./components/ColorfullMessage";
 
 // JSX記法で記述
 const App = () => {
